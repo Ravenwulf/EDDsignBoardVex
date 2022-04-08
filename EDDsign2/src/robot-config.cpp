@@ -25,10 +25,10 @@ int rc_auto_loop_function_Controller1() {
     if(RemoteControlCodeEnabled) {
       // check the ButtonUp/ButtonDown status to control Motor2
       if (Controller1.ButtonUp.pressing()) {
-        Motor2.spin(forward);
+        Motor2.spin(reverse);
         Controller1UpDownButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonDown.pressing()) {
-        Motor2.spin(reverse);
+        Motor2.spin(forward);
         Controller1UpDownButtonsControlMotorsStopped = false;
       } else if (!Controller1UpDownButtonsControlMotorsStopped) {
         Motor2.stop();
