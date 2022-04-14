@@ -8,7 +8,7 @@ using code = vision::code;
 brain  Brain;
 
 // VEXcode device constructors
-motor Motor2 = motor(PORT2, ratio18_1, false);
+motor Motor2 = motor(PORT12, ratio18_1, false);
 controller Controller1 = controller(primary);
 
 // VEXcode generated functions
@@ -25,10 +25,10 @@ int rc_auto_loop_function_Controller1() {
     if(RemoteControlCodeEnabled) {
       // check the ButtonUp/ButtonDown status to control Motor2
       if (Controller1.ButtonUp.pressing()) {
-        Motor2.spin(forward);
+        Motor2.spin((directionType) fwd, (double) 25.0, pct);
         Controller1UpDownButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonDown.pressing()) {
-        Motor2.spin(reverse);
+        Motor2.spin(reverse, 25.0, pct);
         Controller1UpDownButtonsControlMotorsStopped = false;
       } else if (!Controller1UpDownButtonsControlMotorsStopped) {
         Motor2.stop();
