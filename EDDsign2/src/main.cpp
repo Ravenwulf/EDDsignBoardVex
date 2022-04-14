@@ -19,12 +19,12 @@
 using namespace vex;
 
 void oneventbuttonX() {
-  Motor2.spinFor((directionType) fwd, (double) 2.0, (timeUnits) sec);
+  Motor2.spinFor((directionType) rev, (double) 1.0, (timeUnits) sec);
   Controller1.rumble(".");
 }
 
 void oneventbuttonY() {
-  Motor2.spinFor((directionType) rev, (double) 2.0, (timeUnits) sec);
+  Motor2.spinFor((directionType) fwd, (double) 1.0, (timeUnits) sec);
   Controller1.rumble(".");
 }
 
